@@ -5,10 +5,11 @@ import {Credentials} from "../vo/app.credentials";
 @Component({
     selector: 'LoginView',
     template:
-      `<div>
+      `<div style="margin: auto; width: 30%;">
           <div  [hidden]="submitted">
               <h1>Cogmed Login</h1>
-              <form (ngSubmit)="service.login(credentials)" #heroForm="ngForm" autocomplete="off">
+              <form (ngSubmit)="service.login(credentials)" #heroForm="ngForm" autocomplete="off" 
+              style="margin: auto; width: 80%">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" class="form-control" required
@@ -22,7 +23,7 @@ import {Credentials} from "../vo/app.credentials";
                   TODO: remove this: {{credentials.name}} {{credentials.password}}
                 </div>
 
-                <button type="submit" class="btn btn-default" 
+                <button type="submit" class="btn btn-default" style="width: 50%;" 
                         [disabled]="!heroForm.form.valid">Submit</button>
               </form>
               

@@ -22,16 +22,7 @@ export class LoginService{
 
     var loginData = {Target:"get_login_info",Content:[4,credentials.name,credentials.password,0,null,'']};
 
-    try{
-        let requestArg:RequestArgs = new RequestArgs();
-        requestArg.url = "http://glhd1.cogmed.com/ntgw/";
-        requestArg.method = RequestMethod.Post;
-        requestArg.
-
-        this.http.request("http://glhd1.cogmed.com/ntgw/",JSON.stringify(loginData),options).subscribe();
-    } catch (e:Error){
-        console.log(e);
-    }
+    this.http.post("http://glhd1.cogmed.com/ntgw/",JSON.stringify(loginData),options).subscribe();
 
 
     console.log("doLogin",credentials);
